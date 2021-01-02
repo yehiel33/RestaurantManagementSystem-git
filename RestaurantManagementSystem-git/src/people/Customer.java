@@ -10,6 +10,12 @@ public class Customer extends Person {
 		this.PhoneNumber = PhoneNumber;
 	}
 
+	public Customer (Customer other)
+	{
+		super(other.FirstName, other.LastName);
+		this.PhoneNumber = other.PhoneNumber;
+	}
+	
 	public String GetPhoneNumber() {
 		return PhoneNumber;
 	}

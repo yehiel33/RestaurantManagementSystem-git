@@ -52,7 +52,10 @@ public class Date {
 		year = num; //Changes the value
 	}
 	
-	
+	public boolean IsEquals(Date other)
+	{
+		return ((day==other.day) && (month==other.month) && (year==other.year));
+	}
 	
 	@Override
 	public String toString() //A method that returns the date

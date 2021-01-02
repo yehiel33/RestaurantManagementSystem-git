@@ -2,10 +2,10 @@ package service;
 
 import java.util.Arrays;
 
+import enums.Tables;
 import etc.Date;
 import etc.Time;
 import people.Customer;
-import enums.Tables;
 
 public class Order {
 
@@ -20,6 +20,16 @@ public class Order {
 	{
 		this.OrderId = OrderId;
 		this.customer = new Customer(FirstName, LastName, PhoneNumber);
+		this.OrderDate = new Date(OrderDate);
+		this.OrderTime = new Time(OrderTime);
+		this.Table = Table;
+		this.Items = Items;
+	}
+	
+	public Order (int OrderId, Customer customer, Date OrderDate, Time OrderTime, Tables Table, Item [] Items)
+	{
+		this.OrderId = OrderId;
+		this.customer = new Customer(customer);
 		this.OrderDate = new Date(OrderDate);
 		this.OrderTime = new Time(OrderTime);
 		this.Table = Table;
@@ -75,6 +85,7 @@ public class Order {
 	
 	public double OrderSum ()
 	{
+
 		double OrderSum=0;
 		for (int i=0; i<Items.length;i++)
 		{
@@ -89,6 +100,6 @@ public class Order {
 		return "Order [OrderId=" + OrderId + ", customer=" + customer + ", OrderDate=" + OrderDate + ", OrderTime="
 				+ OrderTime + ", Table=" + Table + ", Items=" + Arrays.toString(Items) + "]";
 	}
-	
-		
+
+
 }

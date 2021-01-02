@@ -1,6 +1,5 @@
 package dataBases;
 
-import enums.Role;
 import people.Employee;
 
 public class EmployeeDB {
