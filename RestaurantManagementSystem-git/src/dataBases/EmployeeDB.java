@@ -1,5 +1,6 @@
 package dataBases;
 
+import enums.Role;
 import people.Employee;
 
 public class EmployeeDB {
@@ -42,4 +43,96 @@ public class EmployeeDB {
 		return Str;
 	}
 	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public String PrintLowHourRateEmployee()
+	{
+		String Str = "";
+		double LowHourRate=100;// - another way?
+		String Name = "";
+		
+		for(int i = 0; i < Counter; i++)
+		{
+			if(Employees [i].GetHourRate() < LowHourRate)
+			{
+				LowHourRate = Employees [i].GetHourRate();
+				Name = Employees [i].GetFirstName() + " " + Employees [i].GetLastName();
+			}
+		}
+		
+		Str = "The Employee With The lowest Hour Rate Is: " + Name + ", And His Hour Rate Is: " + LowHourRate;
+		
+		return Str;
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+	public String PrintAvgHourRate()
+	{
+		double AvgHourRate = 0;
+		String Str = "";
+		for(int i=0; i<Counter;i++)
+		{
+			AvgHourRate+=Employees [i].GetHourRate();
+		}
+		Str = "The Average Hour Rate is: "  + Math.round(AvgHourRate/Counter);
+		return Str;
+		
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	public String PrintNumberOfEachRole()
+	{
+		int numOfManager= 0;
+		int numOfWaiter= 0;
+		int numOfHostess= 0;
+		int numOfCashier= 0;
+		int numOfCleaner= 0;
+		int numOfChef= 0;
+		String Str = "";
+		
+		for(int i=0; i<Counter;i++)
+		{
+			switch(Employees [i].GetRole())
+			{
+			case Manager:
+				numOfManager++;
+				break;
+			case Waiter:
+				numOfWaiter++;
+				break;
+			case Hostess:
+				numOfHostess++;
+				break;
+			case Cashier:
+				numOfCashier++;
+				break;
+			case Cleaner:
+				numOfCleaner++;
+				break;
+			case Chef:
+				numOfChef++;
+				break;
+			}
+		}
+		Str = "----------------------------------------------"
+				+ "\n The number Of Managers is:" + numOfManager
+				+ "\n The number Of Waiters is:" + numOfWaiter
+				+ "\n The number Of Hostess is:" + numOfHostess
+				+ "\n The number Of Cashier is:" + numOfCashier
+				+ "\n The number Of Cleaner is:" + numOfCleaner
+				+ "\n The number Of Chef is:" + numOfChef
+				+"\n----------------------------------------------";
+			
+		return Str;
+		
+	}
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

@@ -21,6 +21,10 @@ public class EmployeesReports {
 		db1.AddEmployee(e4);
 		
 		System.out.println(db1.PrintHighHourRateEmployee());
+		System.out.println(db1.PrintLowHourRateEmployee());
+		System.out.println(db1.PrintAvgHourRate());
+		
+		System.out.println(db1.PrintNumberOfEachRole());
 	}
 
 }

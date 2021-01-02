@@ -1,5 +1,6 @@
 package etc;
 
+
 public class Date {
 	
 	//Defining objects
@@ -50,6 +51,8 @@ public class Date {
 	{
 		year = num; //Changes the value
 	}
+	
+	
 	
 	@Override
 	public String toString() //A method that returns the date
