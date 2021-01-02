@@ -12,6 +12,12 @@ public class Item {
 		this.ItemName = ItemName;
 		this.Price = Price;
 	}
+	public Item (Item other)
+	{
+		this.ItemId = other.ItemId;
+		this.ItemName = other.ItemName;
+		this.Price = other.Price;
+	}
 
 	public int GetItemId() {
 		return ItemId;
@@ -39,8 +45,7 @@ public class Item {
 
 	@Override
 	public String toString() {
-		return "Item [ItemId=" + ItemId + ", ItemName=" + ItemName + ", Price=" + Price
-				+ "]";
+		return ItemId +":"+"\t" +ItemName + "\t" + Price + "\t" + "nis";
 	}
 	
 	

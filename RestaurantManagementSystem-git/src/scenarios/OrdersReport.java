@@ -19,12 +19,12 @@ public class OrdersReport {
 		
 		Item i1 = new Item(1, "Pizza", 28.7);
 		Item i2 = new Item(2, "Salad", 22.3);
-		Item i3 = new Item(3, "Coca-Cola", 12.5);
+		Item i3 = new Item(3, "Cola", 12.5);
 		Item i4 = new Item(4, "Pasta", 32.6);
 		Item i5 = new Item(5, "Soda", 8.5);
-		Item i6 = new Item(6, "Hamburger", 42.3);
+		Item i6 = new Item(6, "Burger", 42.3);
 		Item i7 = new Item(7, "Rice", 11.9);
-		Item i8 = new Item(8, "Orenge-Juice", 9.9);
+		Item i8 = new Item(8, "Juice", 9.9);
 		Item i9 = new Item(9, "Bread", 5.5);
 		Item i10 = new Item(10, "Soup", 15.4);
 		
@@ -53,8 +53,8 @@ public class OrdersReport {
 		
 		Order o1 = new Order  (1, c1, d1, t1, Tables.Big_Central, I1);
 		Order o2 = new Order  (2, c2, d2, t1, Tables.Bar_2, I2);
-		Order o3 = new Order  (2, c3, d1, t1, Tables.Small_Central, I3);
-
+		Order o3 = new Order  (3, c3, d1, t1, Tables.Small_Central, I3);
+		
 		OrdersDB ODB1 = new OrdersDB();
 		
 		ODB1.AddOrder(o1);
@@ -62,14 +62,13 @@ public class OrdersReport {
 		ODB1.AddOrder(o3);
 		
 		
+		System.out.println(ODB1.toString());
+		
 		System.out.println(ODB1.OrdersSum());
 		
 		System.out.println(ODB1.OrdersSumByDate(d1));
 		
-		for(int i=0; i<o1.GetItems().length;i++)
-		{
-			System.out.println(o1.GetItems()[i]);
-		}
+
 		
 	}
 

@@ -36,6 +36,21 @@ public class Order {
 		this.Items = Items;
 	}
 	
+	/*public Order (int OrderId, Customer customer, Date OrderDate, Time OrderTime, Tables Table, Item [] Items)
+	{
+		this.OrderId = OrderId;
+		this.customer = new Customer(customer);
+		this.OrderDate = new Date(OrderDate);
+		this.OrderTime = new Time(OrderTime);
+		this.Table = Table;
+		this.Items = Items;
+		for(int i=0; i<Items.length;i++)
+		{
+			this.Items[i]=new Item (Items[i]);
+		}
+	}
+	*/
+	
 	public int GetOrderId() {
 		return OrderId;
 	}

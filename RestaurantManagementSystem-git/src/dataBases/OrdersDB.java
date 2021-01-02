@@ -2,27 +2,22 @@ package dataBases;
 
 
 import java.text.DecimalFormat;
+import java.util.Arrays;
 
 import etc.Date;
 import service.Order;
 
 public class OrdersDB {
 		private Order [] OrdersArray;
-		private int MaxOrders=100;
-		private int CounterOfOrders;
-		
+			
 		public OrdersDB() {
-		OrdersArray = new Order[MaxOrders];
-		CounterOfOrders = 0;
+		OrdersArray = new Order[1];
 		}
 		
 		public void AddOrder(Order order)
 		{
-			if(CounterOfOrders < MaxOrders) 
-			{
-			OrdersArray[CounterOfOrders] = order;
-			CounterOfOrders ++;
-			}
+			OrdersArray[OrdersArray.length-1] = order;	
+			OrdersArray = increaseArray(OrdersArray);
 		}
 		
 		
@@ -33,10 +28,9 @@ public class OrdersDB {
 			double OrdersSum=0;
 			DecimalFormat df = new DecimalFormat("#.###");
 
-			for (int i=0; i<CounterOfOrders;i++)
+			for (int i=0; i<OrdersArray.length-1;i++)
 			{
 				OrdersSum+=OrdersArray[i].OrderSum();
-				
 			}
 			Str="our resturants sum of orders is: " + df.format(OrdersSum);
 			return Str;
@@ -49,7 +43,7 @@ public class OrdersDB {
 			double OrdersSum=0;
 			DecimalFormat df = new DecimalFormat("#.###");
 
-			for (int i=0; i<CounterOfOrders;i++)
+			for (int i=0; i<OrdersArray.length-1;i++)
 			{
 				if((OrdersArray[i].GetOrderDate()).IsEquals(d))
 					OrdersSum+=OrdersArray[i].OrderSum();
@@ -57,6 +51,23 @@ public class OrdersDB {
 			Str="our resturants sum of orders is: " + df.format(OrdersSum);
 			return Str;
 		}
+		
+		public Order[] increaseArray (Order[] OldArray)
+		{
+			Order [] newArray=new Order[OldArray.length+1];
+			for(int i=0; i<OldArray.length; i++)
+			{
+				newArray[i]=OldArray[i];
+			}
+			return newArray;
+		}
+
+		@Override
+		public String toString() {
+			return "OrdersDB [OrdersArray=" + Arrays.toString(OrdersArray) + "]";
+		}
+
+
 
 		
 		
