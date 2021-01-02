@@ -48,10 +48,11 @@ public class EmployeeDB {
 	public String PrintLowHourRateEmployee()
 	{
 		String Str = "";
-		double LowHourRate=100;// - another way?
-		String Name = "";
+		String Name = Employees [0].GetFirstName()+ " " + Employees [0].GetLastName();
 		
-		for(int i = 0; i < Counter; i++)
+		double LowHourRate=Employees[0].GetHourRate();
+
+		for(int i = 1; i < Counter; i++)
 		{
 			if(Employees [i].GetHourRate() < LowHourRate)
 			{
@@ -119,6 +120,8 @@ public class EmployeeDB {
 			case Chef:
 				numOfChef++;
 				break;
+
+				
 			}
 		}
 		Str = "----------------------------------------------"

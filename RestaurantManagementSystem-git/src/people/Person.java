@@ -11,6 +11,7 @@ public abstract class Person {
 		this.LastName = LastName;
 	}
 	
+	
 	public String GetFirstName()
 	{
 		return FirstName;

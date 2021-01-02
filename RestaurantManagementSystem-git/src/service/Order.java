@@ -4,19 +4,22 @@ import java.util.Arrays;
 
 import etc.Date;
 import etc.Time;
+import people.Customer;
 import enums.Tables;
 
 public class Order {
 
 	private int OrderId;
+	private Customer customer;
 	private Date OrderDate;
 	private Time OrderTime;
 	private Tables Table;
 	private Item [] Items;
 	
-	public Order (int OrderId, Date OrderDate, Time OrderTime, Tables Table, Item [] Items)
+	public Order (int OrderId,String FirstName,String LastName,String PhoneNumber , Date OrderDate, Time OrderTime, Tables Table, Item [] Items)
 	{
 		this.OrderId = OrderId;
+		this.customer = new Customer(FirstName, LastName, PhoneNumber);
 		this.OrderDate = new Date(OrderDate);
 		this.OrderTime = new Time(OrderTime);
 		this.Table = Table;
@@ -30,21 +33,28 @@ public class Order {
 	public void SetOrderId(int OrderId) {
 		this.OrderId = OrderId;
 	}
+	public Customer GetCustomer() {
+		return customer;
+	}
+
+	public void SetCustomer(Customer customer) {
+		this.customer = customer;
+	}
 
 	public Date GetOrderDate() {
-		return OrderDate;
+		return new Date (OrderDate);
 	}
 
 	public void SetOrderDate(Date OrderDate) {
-		this.OrderDate = OrderDate;
+		this.OrderDate = new Date (OrderDate);
 	}
 
 	public Time GetOrderTime() {
-		return OrderTime;
+		return new Time (OrderTime);
 	}
 
 	public void SetOrderTime(Time OrderTime) {
-		this.OrderTime = OrderTime;
+		this.OrderTime =new Time (OrderTime);
 	}
 
 	public Tables GetTable() {
@@ -62,11 +72,23 @@ public class Order {
 	public void SetItems(Item[] Items) {
 		this.Items = Items;
 	}
+	
+	public double OrderSum ()
+	{
+		double OrderSum=0;
+		for (int i=0; i<Items.length;i++)
+		{
+			OrderSum+=Items[i].GetPrice();
+		}
+		
+		return OrderSum;
+	}
 
 	@Override
 	public String toString() {
-		return "Order [OrderDate=" + OrderDate + ", OrderTime=" + OrderTime + ", OrderId=" + OrderId
-				+ ", Items=" + Arrays.toString(Items) + "]";
+		return "Order [OrderId=" + OrderId + ", customer=" + customer + ", OrderDate=" + OrderDate + ", OrderTime="
+				+ OrderTime + ", Table=" + Table + ", Items=" + Arrays.toString(Items) + "]";
 	}
+	
 		
 }
