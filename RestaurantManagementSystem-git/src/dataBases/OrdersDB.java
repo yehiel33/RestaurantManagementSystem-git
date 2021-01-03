@@ -1,5 +1,8 @@
 package dataBases;
-
+/**
+ * @author Eyal Amar and Yehiel Yegudayev
+ * this class contains the data base of order objects
+ */
 
 import java.text.DecimalFormat;
 import java.util.Arrays;
@@ -8,52 +11,64 @@ import etc.Date;
 import service.Order;
 
 public class OrdersDB {
-		private Order [] OrdersArray;
-			
-		public OrdersDB() {
-		OrdersArray = new Order[1];
+	
+		private Order [] ordersArray;
+		
+		public OrdersDB() { //regular constructor
+		ordersArray = new Order[1];
 		}
 		
 		public void AddOrder(Order order)
 		{
-			OrdersArray[OrdersArray.length-1] = order;	
-			OrdersArray = increaseArray(OrdersArray);
+			/**
+			 * method that get Order object and adding it to order array
+			 */
+			ordersArray[ordersArray.length-1] = order;	
+			ordersArray = increaseArray(ordersArray);
 		}
 		
 		
 		public String OrdersSum ()
 		{
+			/**
+			 * method that return string with the sum of all orders 
+			 */
 
-			String Str ="";
-			double OrdersSum=0;
+			String str ="";
+			double ordersSum=0;
 			DecimalFormat df = new DecimalFormat("#.###");
 
-			for (int i=0; i<OrdersArray.length-1;i++)
+			for (int i=0; i<ordersArray.length-1;i++)
 			{
-				OrdersSum+=OrdersArray[i].OrderSum();
+				ordersSum+=ordersArray[i].OrderSum();
 			}
-			Str="our resturants sum of orders is: " + df.format(OrdersSum);
-			return Str;
+			str="our resturants sum of orders is: " + df.format(ordersSum);
+			return str;
 		}
 		
 		
 		public String OrdersSumByDate (Date d) {
-
-			String Str ="";
-			double OrdersSum=0;
+			/**
+			 * method that return string with the sum of all order in some date 
+			 */
+			String str ="";
+			double ordersSum=0;
 			DecimalFormat df = new DecimalFormat("#.###");
 
-			for (int i=0; i<OrdersArray.length-1;i++)
+			for (int i=0; i<ordersArray.length-1;i++)
 			{
-				if((OrdersArray[i].GetOrderDate()).IsEquals(d))
-					OrdersSum+=OrdersArray[i].OrderSum();
+				if((ordersArray[i].GetOrderDate()).IsEquals(d))
+					ordersSum+=ordersArray[i].OrderSum();
 			}
-			Str="our resturants sum of orders is: " + df.format(OrdersSum);
-			return Str;
+			str="our resturants sum of orders is: " + df.format(ordersSum);
+			return str;
 		}
 		
 		public Order[] increaseArray (Order[] OldArray)
 		{
+			/**
+			 * method that increases array when adding new object
+			 */
 			Order [] newArray=new Order[OldArray.length+1];
 			for(int i=0; i<OldArray.length; i++)
 			{
@@ -62,9 +77,9 @@ public class OrdersDB {
 			return newArray;
 		}
 
-		@Override
+		@Override // toString
 		public String toString() {
-			return "OrdersDB [OrdersArray=" + Arrays.toString(OrdersArray) + "]";
+			return "OrdersDB [OrdersArray=" + Arrays.toString(ordersArray) + "]";
 		}
 
 

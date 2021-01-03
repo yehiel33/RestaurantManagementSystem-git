@@ -22,7 +22,7 @@ public class EmployeesReports {
 		
 		System.out.println(db1.HighHourRateEmployee());
 		System.out.println(db1.LowHourRateEmployee());
-		System.out.println(db1.AvgHourRate());
+		System.out.println(db1.avgHourRate());
 		
 		System.out.println(db1.NumberOfEachRole());
 	}

@@ -1,12 +1,19 @@
 package etc;
-
+/**
+ * @author Eyal Amar and Yehiel Yegudayev
+ */
 public class Time {
 	
 	//Defining objects
 	private int hour;
 	private int minute;
 	private int second;
-	
+	/**
+	 * 
+	 * @param hour represents the hour in Time class
+	 * @param minute represents the minute in Time class
+	 * @param second represents the second in Time class
+	 */
 	public Time (int h, int m, int s) //constructor
 	{
 		hour = h; //Inserts the value into the object

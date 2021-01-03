@@ -6,39 +6,39 @@ package people;
 public abstract class Person {
 
 
-	protected String FirstName;
-	protected String LastName;
+	protected String firstName;
+	protected String lastName;
 	/**
-	 * @param FirstName represents the first name of person
-	 * @param LastName represents the last name of person
+	 * @param firstName represents the first name of person
+	 * @param lastName represents the last name of person
 	 * this two parameters are protected because there are some classes that inherit from this class
 	 */
-	public Person (String FirstName, String LastName) //regular constructor
+	public Person (String firstName, String lastName) //regular constructor
 	{
-		this.FirstName = FirstName;
-		this.LastName = LastName;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 	
 	public String GetFirstName() // Getters and Setters
 	{
-		return FirstName;
+		return firstName;
 	}
-	public void SetFirstName(String FirstName)
+	public void SetFirstName(String firstName)
 	{
-		this.FirstName = FirstName;
+		this.firstName = firstName;
 	}
 	public String GetLastName()
 	{
-		return LastName;
+		return lastName;
 	}
-	public void SetLastName(String LastName)
+	public void SetLastName(String lastName)
 	{
-		this.LastName = LastName;
+		this.lastName = lastName;
 	}
 	
 	@Override // toString method
 	public String toString() {
-		return "Person [FirstName=" + FirstName + ", LastName=" + LastName + "]";
+		return "Person [FirstName=" + firstName + ", LastName=" + lastName + "]";
 	}
 	
 

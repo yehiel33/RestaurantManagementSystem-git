@@ -5,49 +5,49 @@ package service;
  */
 public class Item {
 
-	private int ItemId;
-	private String ItemName;
-	private double Price;
+	private int itemId;
+	private String itemName;
+	private double price;
 	/**
-	 * @param ItemId represents the Item ID of Item
-	 * @param ItemName represents the Item name of Item
-	 * @param Price represents the Price of Item
+	 * @param itemId represents the Item ID of Item
+	 * @param itemName represents the Item name of Item
+	 * @param price represents the Price of Item
 	 */
 	public Item (int ItemId, String ItemName, double Price) //regular constructor
 	{
-		this.ItemId = ItemId;
-		this.ItemName = ItemName;
-		this.Price = Price;
+		this.itemId = ItemId;
+		this.itemName = ItemName;
+		this.price = Price;
 	}
 	public Item (Item other) //copy constructor
 	{
-		this.ItemId = other.ItemId;
-		this.ItemName = other.ItemName;
-		this.Price = other.Price;
+		this.itemId = other.itemId;
+		this.itemName = other.itemName;
+		this.price = other.price;
 	}
 
 	public int GetItemId() { // Getters and Setters
-		return ItemId;
+		return itemId;
 	}
-	public void SetItemId(int ItemId) {
-		this.ItemId = ItemId;
+	public void SetItemId(int itemId) {
+		this.itemId = itemId;
 	}
 	public String GetItemName() {
-		return ItemName;
+		return itemName;
 	}
-	public void SetItemName(String ItemName) {
-		this.ItemName = ItemName;
+	public void SetItemName(String itemName) {
+		this.itemName = itemName;
 	}
 	public double GetPrice() {
-		return Price;
+		return price;
 	}
-	public void SetPrice(double Price) {
-		this.Price = Price;
+	public void SetPrice(double price) {
+		this.price = price;
 	}
 
 	@Override // toString method
 	public String toString() {
-		return ItemId +":"+"\t" +ItemName + "\t" + Price + "\t" + "nis";
+		return itemId +":"+"\t" +itemName + "\t" + price + "\t" + "nis";
 	}
 	
 	

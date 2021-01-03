@@ -8,28 +8,27 @@ import enums.Role;
 public class Employee extends Person {
 
 	private String ID;
-	private int Age;
-	private Role Role;
-	private String Address;
-	private double HourRate;
+	private int age;
+	private Role role;
+	private String address;
+	private double hourRate;
 /**
- * 	
- * @param FirstName represents the first name of Employee
- * @param LastName represents the last name of Employee
+ * @param firstName represents the first name of Employee
+ * @param lastName represents the last name of Employee
  * @param ID represents the ID number of Employee
- * @param Age represents the age of Employee
- * @param Role represents the role of Employee
- * @param Address represents the address of Employee
- * @param HourRate represents the salary per hour of Employee
+ * @param age represents the age of Employee
+ * @param role represents the role of Employee
+ * @param address represents the address of Employee
+ * @param hourRate represents the salary per hour of Employee
  */
-	public Employee (String FirstName, String LastName, String ID, int Age, Role Role, String Address, double HourRate) //regular constructor
+	public Employee (String firstName, String lastName, String ID, int age, Role role, String address, double hourRate) //regular constructor
 	{
-		super(FirstName, LastName);
+		super(firstName, lastName);
 		this.ID = ID;
-		this.Age = Age;
-		this.Role = Role;
-		this.Address = Address;
-		this.HourRate = HourRate;
+		this.age = age;
+		this.role = role;
+		this.address = address;
+		this.hourRate = hourRate;
 	}
 
 	public String GetID() { // Getters and Setters
@@ -39,34 +38,34 @@ public class Employee extends Person {
 		this.ID = ID;
 	}
 	public int GetAge() {
-		return Age;
+		return age;
 	}
-	public void SetAge(int Age) {
-		this.Age = Age;
+	public void SetAge(int age) {
+		this.age = age;
 	}
 	public Role GetRole() {
-		return Role;
+		return role;
 	}
-	public void SetRole(Role Role) {
-		this.Role = Role;
+	public void SetRole(Role role) {
+		this.role = role;
 	}
 	public String GetAddress() {
-		return Address;
+		return address;
 	}
-	public void SetAddress(String Address) {
-		this.Address = Address;
+	public void SetAddress(String address) {
+		this.address = address;
 	}
 	public double GetHourRate() {
-		return HourRate;
+		return hourRate;
 	}
-	public void SetHourRate(double HourRate) {
-		this.HourRate = HourRate;
+	public void SetHourRate(double hourRate) {
+		this.hourRate = hourRate;
 	}
 
 	@Override // toString method
 	public String toString() {
-		return "Employee [ID=" + ID + ", Age=" + Age + ", Role=" + Role + ", Address=" + Address
-				+ ", HourRate=" + HourRate + ", FirstName=" + FirstName + ", LastName=" + LastName + "]";
+		return "Employee [ID=" + ID + ", Age=" + age + ", Role=" + role + ", Address=" + address
+				+ ", HourRate=" + hourRate + ", FirstName=" + firstName + ", LastName=" + lastName + "]";
 	}
 	
 	

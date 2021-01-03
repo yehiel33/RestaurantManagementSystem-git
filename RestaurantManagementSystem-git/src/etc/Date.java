@@ -1,13 +1,18 @@
 package etc;
-
-
+/**
+ * @author Eyal Amar and Yehiel Yegudayev
+ */
 public class Date {
 	
 	//Defining objects
 	private int day;
 	private int month;
 	private int year;
-	
+	/**
+	 * @param day represents the day in Date class
+	 * @param month represents the month in Date class
+	 * @param year represents the year in Date class
+	 */
 	public Date (int day, int month, int year) // parameter constructor
 	{
 		this.day = day;
@@ -52,8 +57,11 @@ public class Date {
 		year = num; //Changes the value
 	}
 	
-	public boolean IsEquals(Date other)
+	public boolean IsEquals(Date other) 
 	{
+		/**
+		 * method that return true if two dates are equals
+		 */
 		return ((day==other.day) && (month==other.month) && (year==other.year));
 	}
 	

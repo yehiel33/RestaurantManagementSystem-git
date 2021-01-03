@@ -1,7 +1,9 @@
 package enums;
 
 public enum Tables {
-
+	/**
+	 * list of available tables
+	 */
 	Small_Central,
 	Medium_Central,
 	Big_Central,

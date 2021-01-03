@@ -1,94 +1,102 @@
 package dataBases;
+/**
+ * @author Eyal Amar and Yehiel Yegudayev
+ * this class contains the data base of order objects
+ */
 
 import people.Employee;
 
-public class EmployeeDB {
-
-	private Employee [] Employees;
-	private int TotalEmployeeNumber = 20;
-	private int Counter;
+public class EmployeeDB { 
 	
-	public EmployeeDB() {
-		Employees = new Employee [TotalEmployeeNumber];
-		Counter = 0;
+	private Employee [] employees;
+	private static final int maximum_number_of_employees = 25;
+	private int currentNumberOfEmployees;
+	
+	public EmployeeDB() { //regular constructor
+		employees = new Employee [maximum_number_of_employees];
+		currentNumberOfEmployees = 0;
 	}
 	
-	public void AddEmployee(Employee employee)
+	public void AddEmployee(Employee employee) 
 	{
-		if(Counter < TotalEmployeeNumber)
+		/**
+		 * method that get Employee object and adding it to array of employees
+		 */
+		if(currentNumberOfEmployees < maximum_number_of_employees)
 		{
-		Employees[Counter] = employee;
-		Counter ++;
+		employees[currentNumberOfEmployees] = employee;
+		currentNumberOfEmployees ++;
 		}
 	}
 	
 	public String HighHourRateEmployee()
 	{
+		/**
+		 * method that returns the full name of employee that have the highest hour rate
+		 */
 		String Str = "";
-		double HighHourRate = 0;
-		String Name = "";
+		double highHourRate = 0;
+		String fullName = "";
 		
-		for(int i = 0; i < Counter; i++)
+		for(int i = 0; i < currentNumberOfEmployees; i++)
 		{
-			if(Employees [i].GetHourRate() > HighHourRate)
+			if(employees [i].GetHourRate() > highHourRate)
 			{
-				HighHourRate = Employees [i].GetHourRate();
-				Name = Employees [i].GetFirstName() + " " + Employees [i].GetLastName();
+				highHourRate = employees [i].GetHourRate();
+				fullName = employees [i].GetFirstName() + " " + employees [i].GetLastName();
 			}
 		}
 		
-		Str = "The Employee With The Highest Hour Rate Is: " + Name + ", And His Hour Rate Is: " + HighHourRate;
+		Str = "The Employee With The Highest Hour Rate Is: " + fullName + ", And His Hour Rate Is: " + highHourRate;
 		
 		return Str;
 	}
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public String LowHourRateEmployee()
 	{
+		/**
+		 * method that returns the full name of employee that have the lowest hour rate
+		 */
 		String Str = "";
-		String Name = Employees [0].GetFirstName()+ " " + Employees [0].GetLastName();
+		String Name = employees [0].GetFirstName()+ " " + employees [0].GetLastName();
 		
-		double LowHourRate=Employees[0].GetHourRate();
+		double lowHourRate=employees[0].GetHourRate();
 
-		for(int i = 1; i < Counter; i++)
+		for(int i = 1; i < currentNumberOfEmployees; i++)
 		{
-			if(Employees [i].GetHourRate() < LowHourRate)
+			if(employees [i].GetHourRate() < lowHourRate)
 			{
-				LowHourRate = Employees [i].GetHourRate();
-				Name = Employees [i].GetFirstName() + " " + Employees [i].GetLastName();
+				lowHourRate = employees [i].GetHourRate();
+				Name = employees [i].GetFirstName() + " " + employees [i].GetLastName();
 			}
 		}
 		
-		Str = "The Employee With The lowest Hour Rate Is: " + Name + ", And His Hour Rate Is: " + LowHourRate;
+		Str = "The Employee With The lowest Hour Rate Is: " + Name + ", And His Hour Rate Is: " + lowHourRate;
 		
 		return Str;
 	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-	public String AvgHourRate()
+	public String avgHourRate()
 	{
-		double AvgHourRate = 0;
+		/**
+		 * method that returns the average hour rate
+		 */
+		double avgHourRate = 0;
 		String Str = "";
-		for(int i=0; i<Counter;i++)
+		for(int i=0; i<currentNumberOfEmployees;i++)
 		{
-			AvgHourRate+=Employees [i].GetHourRate();
+			avgHourRate+=employees [i].GetHourRate();
 		}
-		Str = "The Average Hour Rate is: "  + Math.round(AvgHourRate/Counter);
+		Str = "The Average Hour Rate is: "  + Math.round(avgHourRate/currentNumberOfEmployees);
 		return Str;
 		
 	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 	public String NumberOfEachRole()
 	{
+		/**
+		 * method that returns string that list the number of each role
+		 */
 		int numOfManager= 0;
 		int numOfWaiter= 0;
 		int numOfHostess= 0;
@@ -97,9 +105,9 @@ public class EmployeeDB {
 		int numOfChef= 0;
 		String Str = "";
 		
-		for(int i=0; i<Counter;i++)
+		for(int i=0; i<currentNumberOfEmployees;i++)
 		{
-			switch(Employees [i].GetRole())
+			switch(employees [i].GetRole())
 			{
 			case Manager:
 				numOfManager++;
@@ -135,6 +143,5 @@ public class EmployeeDB {
 		return Str;
 		
 	}
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-	////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 }

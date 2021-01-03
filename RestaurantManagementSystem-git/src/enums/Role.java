@@ -1,7 +1,9 @@
 package enums;
 
 public enum Role {
-
+/**
+ * list of available roles
+ */
 	Manager,
 	Waiter,
 	Hostess,

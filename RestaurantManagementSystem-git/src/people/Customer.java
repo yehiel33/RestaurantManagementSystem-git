@@ -5,35 +5,34 @@ package people;
  */
 public class Customer extends Person {
 
-	private String PhoneNumber;
+	private String phoneNumber;
 	/**
-	 * 
-	 * @param FirstName represents the first name of Customer
- 	 * @param LastName represents the last name of Customer
-	 * @param PhoneNumber represents the phone number of Customer
+	 * @param firstName represents the first name of Customer
+ 	 * @param lastName represents the last name of Customer
+	 * @param phoneNumber represents the phone number of Customer
 	 */
-	public Customer (String FirstName, String LastName, String PhoneNumber) //regular constructor
+	public Customer (String firstName, String lastName, String phoneNumber) //regular constructor
 	{
-		super(FirstName, LastName);
-		this.PhoneNumber = PhoneNumber;
+		super(firstName, lastName);
+		this.phoneNumber = phoneNumber;
 	}
 
 	public Customer (Customer other) //copy constructor
 	{
-		super(other.FirstName, other.LastName);
-		this.PhoneNumber = other.PhoneNumber;
+		super(other.firstName, other.lastName);
+		this.phoneNumber = other.phoneNumber;
 	}
 	
 	public String GetPhoneNumber() { // Getters and Setters
-		return PhoneNumber;
+		return phoneNumber;
 	}
-	public void SetPhoneNumber(String PhoneNumber) {
-		this.PhoneNumber = PhoneNumber;
+	public void SetPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
 	}
 	
 	@Override // toString method
 	public String toString() {
-		return "Customer [PhoneNumber=" + PhoneNumber + ", FirstName=" + FirstName + ", LastName=" + LastName
+		return "Customer [PhoneNumber=" + phoneNumber + ", FirstName=" + firstName + ", LastName=" + lastName
 				+ "]";
 	}
 	
