@@ -39,17 +39,17 @@ public class Time {
 		this.second = other.second;
 	}
 	
-	public int GetHour() //A method that returns the value of the object hour
+	public int getHour() //A method that returns the value of the object hour
 	{
 		return hour;
 	}
 	
-	public int GetMinute() //A method that returns the value of the object minute
+	public int getMinute() //A method that returns the value of the object minute
 	{
 		return minute;
 	}
 	
-	public int GetSecond() //A method that returns the value of the object second
+	public int getSecond() //A method that returns the value of the object second
 	{
 		return second;
 	}
@@ -60,23 +60,23 @@ public class Time {
 			hour = num; //Changes the value
 	}
 	
-	public void SetMinute (int num) //A method that changes the value of the object minute
+	public void setMinute (int num) //A method that changes the value of the object minute
 	{
 		if (num >= 0 && num < 60)//Check whether the number that given is within the limits
 			minute = num; //Changes the value
 	}
 	
-	public void SetSecond (int num) //A method that changes the value of the object second
+	public void setSecond (int num) //A method that changes the value of the object second
 	{
 		if (num >= 0 && num < 60)//Check whether the number that given is within the limits
 			second = num; //Changes the value
 	}
 	
-    private String MyIntToString(int num) //A method that converts the number to text
+    private String myIntToString(int num) //A method that converts the number to text
     {
         String numStr = "";
         
-        if ( (num > 0) && (num < 10) ) //If there is one digit
+        if ( (num >= 0) && (num < 10) ) //If there is one digit
         {
             numStr = "0"; //Adds 0
         }
@@ -91,7 +91,7 @@ public class Time {
 	{
 		String timeStr = "";
 
-		timeStr = MyIntToString (hour) + ":" + MyIntToString (minute) + ":" + MyIntToString (second);
+		timeStr = myIntToString (hour) + ":" + myIntToString (minute) + ":" + myIntToString (second);
 
 		return timeStr;
 	}

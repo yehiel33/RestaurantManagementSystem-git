@@ -28,20 +28,20 @@ public class OrdersReport {
 		Item i9 = new Item(9, "Bread", 5.5);
 		Item i10 = new Item(10, "Soup", 15.4);
 		
-		MenuDB db1 = new MenuDB();
+		MenuDB menuDB1 = new MenuDB();
 
-		db1.AddItemToMenu(i1);
-		db1.AddItemToMenu(i2);
-		db1.AddItemToMenu(i3);
-		db1.AddItemToMenu(i4);
-		db1.AddItemToMenu(i5);
-		db1.AddItemToMenu(i6);
-		db1.AddItemToMenu(i7);
-		db1.AddItemToMenu(i8);
-		db1.AddItemToMenu(i9);
-		db1.AddItemToMenu(i10);
+		menuDB1.addItemToMenu(i1);
+		menuDB1.addItemToMenu(i2);
+		menuDB1.addItemToMenu(i3);
+		menuDB1.addItemToMenu(i4);
+		menuDB1.addItemToMenu(i5);
+		menuDB1.addItemToMenu(i6);
+		menuDB1.addItemToMenu(i7);
+		menuDB1.addItemToMenu(i8);
+		menuDB1.addItemToMenu(i9);
+		menuDB1.addItemToMenu(i10);
 		
-		System.out.println(db1.toString());
+		System.out.println(menuDB1.toString());
 		
 		Customer c1 = new Customer("Ron", "Shabat", "0543298726");
 		Customer c2 = new Customer("Haim", "Levi", "0504387263");
@@ -55,18 +55,18 @@ public class OrdersReport {
 		Order o2 = new Order  (2, c2, d2, t1, Tables.Bar_2, I2);
 		Order o3 = new Order  (3, c3, d1, t1, Tables.Small_Central, I3);
 		
-		OrdersDB ODB1 = new OrdersDB();
+		OrdersDB orderDB1 = new OrdersDB();
 		
-		ODB1.AddOrder(o1);
-		ODB1.AddOrder(o2);
-		ODB1.AddOrder(o3);
+		orderDB1.addOrder(o1);
+		orderDB1.addOrder(o2);
+		orderDB1.addOrder(o3);
 		
 		
-		System.out.println(ODB1.toString());
+		System.out.println(orderDB1.toString());
 		
-		System.out.println(ODB1.OrdersSum());
+		System.out.println(orderDB1.ordersSum());
 		
-		System.out.println(ODB1.OrdersSumByDate(d1));
+		System.out.println(orderDB1.ordersSumByDate(d1));
 		
 
 		

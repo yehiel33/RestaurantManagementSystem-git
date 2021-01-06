@@ -19,26 +19,26 @@ public abstract class Person {
 		this.lastName = lastName;
 	}
 	
-	public String GetFirstName() // Getters and Setters
+	public String getFirstName() // Getters and Setters
 	{
 		return firstName;
 	}
-	public void SetFirstName(String firstName)
+	public void setFirstName(String firstName)
 	{
 		this.firstName = firstName;
 	}
-	public String GetLastName()
+	public String getLastName()
 	{
 		return lastName;
 	}
-	public void SetLastName(String lastName)
+	public void setLastName(String lastName)
 	{
 		this.lastName = lastName;
 	}
 	
 	@Override // toString method
 	public String toString() {
-		return "Person [FirstName=" + firstName + ", LastName=" + lastName + "]";
+		return firstName + " " + lastName;
 	}
 	
 

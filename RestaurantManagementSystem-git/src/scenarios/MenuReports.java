@@ -20,16 +20,16 @@ public class MenuReports {
 		Item i9 = new Item(9, "Bread", 5.5);
 		Item i10 = new Item(10, "Soup", 15.4);
 		
-		db1.AddItemToMenu(i1);
-		db1.AddItemToMenu(i2);
-		db1.AddItemToMenu(i3);
-		db1.AddItemToMenu(i4);
-		db1.AddItemToMenu(i5);
-		db1.AddItemToMenu(i6);
-		db1.AddItemToMenu(i7);
-		db1.AddItemToMenu(i8);
-		db1.AddItemToMenu(i9);
-		db1.AddItemToMenu(i10);
+		db1.addItemToMenu(i1);
+		db1.addItemToMenu(i2);
+		db1.addItemToMenu(i3);
+		db1.addItemToMenu(i4);
+		db1.addItemToMenu(i5);
+		db1.addItemToMenu(i6);
+		db1.addItemToMenu(i7);
+		db1.addItemToMenu(i8);
+		db1.addItemToMenu(i9);
+		db1.addItemToMenu(i10);
 		
 		System.out.println(db1.toString());
 	}

@@ -3,7 +3,6 @@ package service;
  * @author Eyal Amar and Yehiel Yegudayev
  * This class represents  object in type of Order.
  */
-import java.util.Arrays;
 
 import enums.Tables;
 import etc.Date;
@@ -63,44 +62,44 @@ public class Order {
 	}
 	*/
 	
-	public int GetOrderId() { // Getters and Setters
+	public int getOrderId() { // Getters and Setters
 		return orderId;
 	}
-	public void SetOrderId(int orderId) {
+	public void setOrderId(int orderId) {
 		this.orderId = orderId;
 	}
-	public Customer GetCustomer() {
+	public Customer getCustomer() {
 		return customer;
 	}
-	public void SetCustomer(Customer customer) {
+	public void setCustomer(Customer customer) {
 		this.customer = customer;
 	}
-	public Date GetOrderDate() {
+	public Date getOrderDate() {
 		return new Date (orderDate);
 	}
-	public void SetOrderDate(Date orderDate) {
+	public void setOrderDate(Date orderDate) {
 		this.orderDate = new Date (orderDate);
 	}
-	public Time GetOrderTime() {
+	public Time getOrderTime() {
 		return new Time (orderTime);
 	}
-	public void SetOrderTime(Time orderTime) {
+	public void setOrderTime(Time orderTime) {
 		this.orderTime =new Time (orderTime);
 	}
-	public Tables GetTable() {
+	public Tables getTable() {
 		return table;
 	}
-	public void SetTable(Tables table) {
+	public void setTable(Tables table) {
 		this.table = table;
 	}
-	public Item[] GetItems() {
+	public Item[] getItems() {
 		return items;
 	}
-	public void SetItems(Item[] items) {
+	public void setItems(Item[] items) {
 		this.items = items;
 	}
 
-	public double OrderSum () // 
+	public double orderSum () // 
 	{
 		/**
 		 * OrderSum is method that returns the total sum of all items in the order
@@ -108,7 +107,7 @@ public class Order {
 		double orderSum=0;
 		for (int i=0; i<items.length;i++)
 		{
-			orderSum+=items[i].GetPrice();
+			orderSum+=items[i].getPrice();
 		}
 		
 		return orderSum;
@@ -116,8 +115,19 @@ public class Order {
 
 	@Override // toString method
 	public String toString() {
-		return "Order [OrderId=" + orderId + ", customer=" + customer + ", OrderDate=" + orderDate + ", OrderTime="
-				+ orderTime + ", Table=" + table + ", Items=" + Arrays.toString(items) + "]";
+		return "OrderId: " + orderId  + "\n\nTable: " + table + "\n\n" + "OrderDate: " + orderDate + "\n\nOrderTime: "
+				+ orderTime + "\n\n" + customer + "\n" + "Items:\n" + printItemArray(items);
+	}
+	
+	
+	public String printItemArray(Item [] items)
+	{
+		String str="";
+		for(int i=0; i<items.length; i++)
+		{
+			str+=items[i].toString()+ "\n";
+		}
+		return str;
 	}
 
 

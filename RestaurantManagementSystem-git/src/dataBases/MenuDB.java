@@ -16,7 +16,7 @@ public class MenuDB {
 		currentNumberOfItems = 0;
 	}
 	
-	public void AddItemToMenu(Item item)
+	public void addItemToMenu(Item item)
 	{
 		/**
 		 * method that get Item object and adding it to array
@@ -31,10 +31,10 @@ public class MenuDB {
 	@Override // toString method
 	public String toString()
 	{
-		String Str = "";
+		String str = "The Menu Is:\n\n";
 		for(int i = 0; i < currentNumberOfItems; i++)
-			Str += menu[i].toString() + "\n";
+			str += menu[i].toString() + "\n";
 		
-		return Str;
+		return str;
 	}
 }

@@ -27,37 +27,37 @@ public class Date {
 		this.year = other.year;
 	}
 	
-	public int GetDay() //A method that returns the value of the object day
+	public int getDay() //A method that returns the value of the object day
 	{
 		return day;
 	}
 	
-	public int GetMonth() //A method that returns the value of the object month
+	public int getMonth() //A method that returns the value of the object month
 	{
 		return month;
 	}
 	
-	public int GetYear() //A method that returns the value of the object year
+	public int getYear() //A method that returns the value of the object year
 	{
 		return year;
 	}
 	
-	public void SetDay(int num) //A method that changes the value of the object day
+	public void setDay(int num) //A method that changes the value of the object day
 	{
 		day = num; //Changes the value
 	}
 	
-	public void SetMonth(int num) //A method that changes the value of the object month
+	public void setMonth(int num) //A method that changes the value of the object month
 	{
 		month = num; //Changes the value
 	}
 	
-	public void SetYear(int num) //A method that changes the value of the object year
+	public void setYear(int num) //A method that changes the value of the object year
 	{
 		year = num; //Changes the value
 	}
 	
-	public boolean IsEquals(Date other) 
+	public boolean isEquals(Date other) 
 	{
 		/**
 		 * method that return true if two dates are equals
@@ -65,11 +65,25 @@ public class Date {
 		return ((day==other.day) && (month==other.month) && (year==other.year));
 	}
 	
+    private String myIntToString(int num) //A method that converts the number to text
+    {
+        String numStr = "";
+        
+        if ( (num >= 0) && (num < 10) ) //If there is one digit
+        {
+            numStr = "0"; //Adds 0
+        }
+        
+        numStr = numStr + String.valueOf(num); //Otherwise, the original number will appear
+        
+        return numStr;
+    }
+	
 	@Override
 	public String toString() //A method that returns the date
 	{
-		String Str = "";
-		Str = day + "/" + month + "/" + year;
-		return Str;
+		String str = "";
+		str = myIntToString(day) + "/" + myIntToString(month) + "/" + year;
+		return str;
 	}
 }

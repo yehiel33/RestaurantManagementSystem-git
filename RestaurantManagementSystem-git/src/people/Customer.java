@@ -1,7 +1,7 @@
 package people;
 /**
  * @author Eyal Amar and Yehiel Yegudayev
- * This class represents  object in type of Employee. this object inherit from Person object
+ * This class represents  object in type of Customer. this object inherit from Person object
  */
 public class Customer extends Person {
 
@@ -23,17 +23,17 @@ public class Customer extends Person {
 		this.phoneNumber = other.phoneNumber;
 	}
 	
-	public String GetPhoneNumber() { // Getters and Setters
+	public String getPhoneNumber() { // Getters and Setters
 		return phoneNumber;
 	}
-	public void SetPhoneNumber(String phoneNumber) {
+	public void setPhoneNumber(String phoneNumber) {
 		this.phoneNumber = phoneNumber;
 	}
 	
 	@Override // toString method
 	public String toString() {
-		return "Customer [PhoneNumber=" + phoneNumber + ", FirstName=" + firstName + ", LastName=" + lastName
-				+ "]";
+		return "Customer: " + firstName +" " + lastName+", "+ phoneNumber +"\n";
+				
 	}
 	
 }

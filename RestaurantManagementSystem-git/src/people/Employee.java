@@ -7,7 +7,7 @@ import enums.Role;
 
 public class Employee extends Person {
 
-	private String ID;
+	private String id;
 	private int age;
 	private Role role;
 	private String address;
@@ -15,56 +15,56 @@ public class Employee extends Person {
 /**
  * @param firstName represents the first name of Employee
  * @param lastName represents the last name of Employee
- * @param ID represents the ID number of Employee
+ * @param id represents the ID number of Employee
  * @param age represents the age of Employee
  * @param role represents the role of Employee
  * @param address represents the address of Employee
  * @param hourRate represents the salary per hour of Employee
  */
-	public Employee (String firstName, String lastName, String ID, int age, Role role, String address, double hourRate) //regular constructor
+	public Employee (String firstName, String lastName, String id, int age, Role role, String address, double hourRate) //regular constructor
 	{
 		super(firstName, lastName);
-		this.ID = ID;
+		this.id = id;
 		this.age = age;
 		this.role = role;
 		this.address = address;
 		this.hourRate = hourRate;
 	}
 
-	public String GetID() { // Getters and Setters
-		return ID;
+	public String getId() { // Getters and Setters
+		return id;
 	}
-	public void SetID(String ID) {
-		this.ID = ID;
+	public void setID(String id) {
+		this.id = id;
 	}
-	public int GetAge() {
+	public int getAge() {
 		return age;
 	}
-	public void SetAge(int age) {
+	public void setAge(int age) {
 		this.age = age;
 	}
-	public Role GetRole() {
+	public Role setRole() {
 		return role;
 	}
-	public void SetRole(Role role) {
+	public void setRole(Role role) {
 		this.role = role;
 	}
-	public String GetAddress() {
+	public String getAddress() {
 		return address;
 	}
-	public void SetAddress(String address) {
+	public void setAddress(String address) {
 		this.address = address;
 	}
-	public double GetHourRate() {
+	public double getHourRate() {
 		return hourRate;
 	}
-	public void SetHourRate(double hourRate) {
+	public void setHourRate(double hourRate) {
 		this.hourRate = hourRate;
 	}
 
 	@Override // toString method
 	public String toString() {
-		return "Employee [ID=" + ID + ", Age=" + age + ", Role=" + role + ", Address=" + address
+		return "Employee [ID=" + id + ", Age=" + age + ", Role=" + role + ", Address=" + address
 				+ ", HourRate=" + hourRate + ", FirstName=" + firstName + ", LastName=" + lastName + "]";
 	}
 	

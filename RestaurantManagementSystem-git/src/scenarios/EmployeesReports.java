@@ -15,16 +15,16 @@ public class EmployeesReports {
 		Employee e3 = new Employee ("Dror", "Cohen", "003", 35, Role.Cleaner, "Ben Gurion 2, Beer-Sheva", 29.12);
 		Employee e4 = new Employee ("Adi", "Maman", "004", 18, Role.Hostess, "Avraham Avinu 5, Beer-Sheva", 30.1);
 		
-		db1.AddEmployee(e1);
-		db1.AddEmployee(e2);
-		db1.AddEmployee(e3);
-		db1.AddEmployee(e4);
+		db1.addEmployee(e1);
+		db1.addEmployee(e2);
+		db1.addEmployee(e3);
+		db1.addEmployee(e4);
 		
-		System.out.println(db1.HighHourRateEmployee());
-		System.out.println(db1.LowHourRateEmployee());
+		System.out.println(db1.highHourRateEmployee());
+		System.out.println(db1.lowHourRateEmployee());
 		System.out.println(db1.avgHourRate());
 		
-		System.out.println(db1.NumberOfEachRole());
+		System.out.println(db1.numberOfEachRole());
 	}
 
 }

@@ -13,11 +13,11 @@ public class Item {
 	 * @param itemName represents the Item name of Item
 	 * @param price represents the Price of Item
 	 */
-	public Item (int ItemId, String ItemName, double Price) //regular constructor
+	public Item (int itemId, String itemName, double price) //regular constructor
 	{
-		this.itemId = ItemId;
-		this.itemName = ItemName;
-		this.price = Price;
+		this.itemId = itemId;
+		this.itemName = itemName;
+		this.price = price;
 	}
 	public Item (Item other) //copy constructor
 	{
@@ -26,22 +26,22 @@ public class Item {
 		this.price = other.price;
 	}
 
-	public int GetItemId() { // Getters and Setters
+	public int getItemId() { // Getters and Setters
 		return itemId;
 	}
-	public void SetItemId(int itemId) {
+	public void setItemId(int itemId) {
 		this.itemId = itemId;
 	}
-	public String GetItemName() {
+	public String getItemName() {
 		return itemName;
 	}
-	public void SetItemName(String itemName) {
+	public void setItemName(String itemName) {
 		this.itemName = itemName;
 	}
-	public double GetPrice() {
+	public double getPrice() {
 		return price;
 	}
-	public void SetPrice(double price) {
+	public void setPrice(double price) {
 		this.price = price;
 	}
 
