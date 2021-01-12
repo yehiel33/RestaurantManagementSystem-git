@@ -11,7 +11,7 @@ public class Customer extends Person {
  	 * @param lastName represents the last name of Customer
 	 * @param phoneNumber represents the phone number of Customer
 	 */
-	public Customer (String firstName, String lastName, String phoneNumber) //regular constructor
+	public Customer (String firstName, String lastName, String phoneNumber) //parameter constructor
 	{
 		super(firstName, lastName);
 		this.phoneNumber = phoneNumber;

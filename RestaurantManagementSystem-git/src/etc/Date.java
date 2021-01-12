@@ -4,7 +4,6 @@ package etc;
  */
 public class Date {
 	
-	//Defining objects
 	private int day;
 	private int month;
 	private int year;

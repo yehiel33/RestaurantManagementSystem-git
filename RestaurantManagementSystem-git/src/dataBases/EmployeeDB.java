@@ -5,16 +5,19 @@ package dataBases;
  */
 
 import java.text.DecimalFormat;
-
 import people.Employee;
 
 public class EmployeeDB { 
-	
+
 	private Employee [] employees;
 	private static final int MAXIMUM_NUMBER_OF_EMPLOYEES = 25;
 	private int currentNumberOfEmployees;
-	
-	public EmployeeDB() { //regular constructor
+	/**
+	 * @param employees represents the array of Employees
+	 * @param MAXIMUM_NUMBER_OF_EMPLOYEES represents the maximum number of of employees
+	 * @param currentNumberOfEmployees counter
+	 */
+	public EmployeeDB() { //default constructor
 		employees = new Employee [MAXIMUM_NUMBER_OF_EMPLOYEES];
 		currentNumberOfEmployees = 0;
 	}

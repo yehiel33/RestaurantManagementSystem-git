@@ -27,7 +27,7 @@ public class Order {
 	 * @param table represents the table of the order
 	 * @param items (array) represents all the items in the order
 	 */
-	public Order (int orderId,String firstName,String lastName,String phoneNumber , Date orderDate, Time orderTime, Tables table, Item [] items) //regular constructor
+	public Order (int orderId,String firstName,String lastName,String phoneNumber , Date orderDate, Time orderTime, Tables table, Item [] items) //parameter constructor
 	{
 		this.orderId = orderId;
 		this.customer = new Customer(firstName, lastName, phoneNumber);
@@ -122,12 +122,18 @@ public class Order {
 	
 	public String printItemArray(Item [] items)
 	{
+		/**
+		 * printItemArray is method that get array of items as argument and returns list of all items as string
+		 */
 		String str="";
+		double sumItemsPrice=0;
 		for(int i=0; i<items.length; i++)
 		{
+			sumItemsPrice+=items[i].getPrice();
 			str+=items[i].toString()+ "\n";
 		}
-		return str;
+		
+		return str + "\n" + "Total Price: "+sumItemsPrice + " nis"+ "\n";
 	}
 
 

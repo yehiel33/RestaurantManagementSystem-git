@@ -5,16 +5,18 @@ package dataBases;
  */
 
 import java.text.DecimalFormat;
-import java.util.Arrays;
 
 import etc.Date;
 import service.Order;
 
 public class OrdersDB {
-	
-		private Order [] ordersArray;
 		
-		public OrdersDB() { //regular constructor
+		private Order [] ordersArray;
+		/**
+		 * @param ordersArray represent array of order type  objects
+		 */
+		
+		public OrdersDB() { //default constructor
 		ordersArray = new Order[1];
 		}
 		
@@ -80,6 +82,7 @@ public class OrdersDB {
 		public String printOrderArray(Order [] orders)
 		{
 			String str ="";
+			
 			for (int i=0; i<ordersArray.length-1;i++)
 			{
 				str+=ordersArray[i].toString() + "---------------------------------------\n";

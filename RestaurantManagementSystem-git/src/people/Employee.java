@@ -21,7 +21,7 @@ public class Employee extends Person {
  * @param address represents the address of Employee
  * @param hourRate represents the salary per hour of Employee
  */
-	public Employee (String firstName, String lastName, String id, int age, Role role, String address, double hourRate) //regular constructor
+	public Employee (String firstName, String lastName, String id, int age, Role role, String address, double hourRate) //parameter constructor
 	{
 		super(firstName, lastName);
 		this.id = id;

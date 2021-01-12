@@ -13,7 +13,7 @@ public abstract class Person {
 	 * @param lastName represents the last name of person
 	 * this two parameters are protected because there are some classes that inherit from this class
 	 */
-	public Person (String firstName, String lastName) //regular constructor
+	public Person (String firstName, String lastName) //parameter constructor
 	{
 		this.firstName = firstName;
 		this.lastName = lastName;

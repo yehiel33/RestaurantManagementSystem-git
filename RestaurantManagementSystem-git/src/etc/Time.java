@@ -4,7 +4,6 @@ package etc;
  */
 public class Time {
 	
-	//Defining objects
 	private int hour;
 	private int minute;
 	private int second;
